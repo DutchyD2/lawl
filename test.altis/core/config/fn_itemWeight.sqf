@@ -59,5 +59,7 @@ switch (_item) do
 	case "kidney": {15};
 	case "cracku": {6};
 	case "crackp": {4};
+	case "bees": {1};
+	case "honey": {0.5};
 	default {1};
 };

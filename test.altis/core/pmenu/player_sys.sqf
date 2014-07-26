@@ -8,7 +8,6 @@
 #define rogue_text 2008
 #define carry_weight 2009
 #define item_edit 2010
-#define happy_text 2011
 
 
 if(!alive player) exitWith {};
@@ -19,7 +18,7 @@ if(dialog) exitwith{};
 _playerDialog = createDialog "playerSettings";
 disableSerialization;
 
-private["_Dialog","_foodtext","_watertext","_moneytext","_happytext","_mvalue","_wl_pi_slider","_wl_pi_svalue"];
+private["_Dialog","_foodtext","_watertext","_moneytext","_mvalue","_wl_pi_slider","_wl_pi_svalue"];
 
 if(playerSide == west) then
 {
@@ -28,8 +27,7 @@ if(playerSide == west) then
 _Dialog = findDisplay playersys_DIALOG;
 _foodtext = _Dialog displayCtrl food_text;
 _watertext = _Dialog displayCtrl water_text;
-_moneytext = _Dialog displayCtrl money_text;
-_happytext = _Dialog displayCtrl happy_text; 
+_moneytext = _Dialog displayCtrl money_text; 
 _mvalue = _Dialog displayCtrl money_value;
 _ivalue = _Dialog displayCtrl item_edit;
 _rogue = _Dialog displayCtrl rogue_text;
@@ -38,7 +36,6 @@ _carry = _Dialog displayCtrl carry_weight;
 
 _foodtext ctrlSettext format["%1 / 100", round(life_hunger)];
 _watertext ctrlSetText format["%1 / 100", round(life_thirst)];
-_happytext ctrlSetText format["%1 / 100", round(life_happy)];
 _carry ctrlSetText format["Weight: %1 / %2", life_carryWeight, life_maxWeight];
 _moneytext ctrlSetText format["%1", life_cash];
 

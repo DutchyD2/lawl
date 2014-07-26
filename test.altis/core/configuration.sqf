@@ -25,7 +25,6 @@ life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
 life_respawn_timer = 0.1; //Scaled in minutes
-life_has_insurance = false;
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
@@ -50,7 +49,7 @@ life_clothing_purchase = [-1,-1,-1,-1,-1];
 ****** Weight Variables *****
 *****************************
 */
-life_maxWeight = 50; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
+life_maxWeight = 10; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
 life_maxWeightT = 10; //Static variable representing the players max carrying weight on start.
 life_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
 
@@ -72,13 +71,6 @@ life_eat_donuts = 30;
 
 /*
 *****************************
-****** Happy Variables *******         // Add this area (I guess there can be an error with the life_eat if someone could help would be cool<-----
-*****************************
-*/
-life_eat_marijuana = 50;
-
-/*
-*****************************
 ****** Life Variables *******
 *****************************
 */
@@ -92,8 +84,7 @@ life_delivery_in_progress = false;
 life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
-life_happy = 70;
-__CONST__(life_paycheck_period,4); //Five minutes
+__CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
 __CONST__(life_impound_car,10000);
 __CONST__(life_impound_boat,10000);
@@ -180,7 +171,9 @@ life_inv_items =
 	"life_inv_storagebig",
 	"life_inv_kidney",
 	"life_inv_cracku",
-	"life_inv_crackp"
+	"life_inv_crackp",
+	"life_inv_bees",
+	"life_inv_honey"
 ];
 
 //Setup variable inv vars.
@@ -211,7 +204,8 @@ life_licenses =
 	["license_civ_cement","civ"],
 	["license_med_air","med"],
 	["license_civ_home","civ"],
-	["license_civ_crack","civ"]
+	["license_civ_crack","civ"],
+	["license_civ_bees","civ"]
 ];
 
 //Setup License Variables
@@ -263,7 +257,9 @@ sell_array =
 	["goldbar",275000],
 	["kidney",80000],
 	["cracku",400],
-	["crackp",5000]
+	["crackp",5000],
+	["bees",50],
+	["honey",450]
 ];
 __CONST__(sell_array,sell_array);
 

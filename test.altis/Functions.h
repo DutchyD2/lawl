@@ -24,6 +24,7 @@ class Life_Client_Core
 		class initCiv {};
 		class initCop {};
 		class initMedic {};
+		class initZeus {};
 		class welcomeNotification {};
 	};
 	
@@ -72,6 +73,7 @@ class Life_Client_Core
 		class dropFishingNet {};
 		class gatherApples {};
 		class gatherCannabis {};
+		class gatherBees {};
 		class gatherHeroin {};
 		class gatherOil {};
 		class getDPMission {};
@@ -142,7 +144,6 @@ class Life_Client_Core
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
 		class houseConfig {};
-		class eathappy {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -150,7 +151,6 @@ class Life_Client_Core
 		class clothing_reb {};
 		class clothing_dive {};
 		class clothing_kart {};
-		class clothing_gang {};
 	};
 
 	class Player_Menu
@@ -351,7 +351,6 @@ class Life_Client_Core
 		class blastingCharge {};
 		class defuseKit {};
 		class storageBox {};
-		class drugEffect {};
 	};
 	
 	class Dialog_Controls

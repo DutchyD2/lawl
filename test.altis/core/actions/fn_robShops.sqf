@@ -28,7 +28,7 @@ _kassa = 20000 + round(random 20000);
 _shop removeAction _action;
 _shop switchMove "AmovPercMstpSsurWnonDnon";
 _chance = random(100);
-if(_chance >= 50) then { hint "The cashier hit the silent alarm, police has been alerted!"; [[1,format["ALARM! - Gasstation: %1 is being robbed!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP; };
+if(_chance >= 20) then { hint "The cashier hit the silent alarm, police has been alerted!"; [[1,format["ALARM! - A gas station is being robbed!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP; };
 
 _cops = (west countSide playableUnits);
 if(_cops < 2) exitWith{[[_vault,-1],"disableSerialization;",false,false] spawn life_fnc_MP; hint "There isnt enough Police to rob gas station!";};

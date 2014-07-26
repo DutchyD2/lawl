@@ -36,4 +36,5 @@ switch (_type) do
 	case "mair": {15000};
 	case "home": {75000};
 	case "crack": {250000};
+	case "bees": {5000};
 };

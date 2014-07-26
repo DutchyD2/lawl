@@ -61,9 +61,11 @@ switch (_var) do
 	case "life_inv_defusekit": {(localize "STR_Item_DefuseKit")};
 	case "life_inv_storagesmall": {(localize "STR_Item_StorageBS")};
 	case "life_inv_storagebig": {(localize "STR_Item_StorageBL")};
-	case "life_inv_kidney": {"STR_Item_Kidney"};
-	case "life_inv_cracku": {"STR_Item_CrackU"};
-	case "life_inv_crackp": {"STR_Item_CrackP"};
+	case "life_inv_kidney": {(localize "STR_Item_Kidney")};
+	case "life_inv_cracku": {(localize "STR_Item_CrackU")};
+	case "life_inv_crackp": {(localize "STR_Item_CrackP")};
+	case "life_inv_bees": {(localize "STR_Item_bees")};
+	case "life_inv_honey": {(localize "STR_Item_honey")};
 
 	//License Block
 	case "license_civ_driver": {(localize "STR_License_Driver")};
@@ -88,5 +90,6 @@ switch (_var) do
 	case "license_civ_cement": {(localize "STR_License_Cement")};
 	case "license_med_air": {(localize "STR_License_Pilot")};
 	case "license_civ_home": {(localize "STR_License_Home")};
-	case "license_civ_crack": {"STR_License_Crack"};
+	case "license_civ_crack": {(localize "STR_License_Crack")};
+	case "license_civ_bees": {(localize "STR_License_Bees")};
 };

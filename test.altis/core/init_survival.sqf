@@ -1,5 +1,5 @@
 [] spawn  {
-	private["_fnc_food","_fnc_water","fnc_happy"];
+	private["_fnc_food","_fnc_water"];
 	_fnc_food = 
 	{
 		if(life_hunger < 2) then {player setDamage 1; hint "You have starved to death.";}
@@ -9,8 +9,8 @@
 		[] call life_fnc_hudUpdate;
 		if(life_hunger < 2) then {player setDamage 1; hint "You have starved to death.";};
 		switch(life_hunger) do {
-			case 30: {hint "You haven't eaten anything in awhile, You should find something to eat soon!";};
-			case 20: {hint "You are starting to starve, you need to find something to eat otherwise you will die.";};
+			case 30: {hint "You are extremely hungry, it's overwhelming your ability to work.";};
+			case 20: {hint "Your stomach is aching, you need to find something to eat otherwise you will die.";};
 			case 10: {hint "You are now starving to death, you will die very soon if you don't eat something";player setFatigue 1;};
 			};
 		};
@@ -26,28 +26,9 @@
 			if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";};
 			switch(life_thirst) do 
 			{
-				case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
-				case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
-				case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
-			};
-		};
-	};
-	
-    _fnc_happy =                // Add this area <----------------
-	{
-		if(life_happy < 2) then {hint "You are about to kill yourself.";}
-		else
-		{
-			life_happy = life_happy - 10;
-			[] call life_fnc_hudUpdate;
-			if(life_happy < 5) then {hint "You are unhappy enough to commit suicide. Well done!";};
-			switch(life_happy) do 
-			{
-				case 40: {hint "You're beginning to get a headache.";};
-				case 30: {hint "You are getting stressed out.";};
-				case 20: {hint "Dont cry. Dont Cry.";};
-				case 15: {hint "You are no longer able to work because of your unhappiness.";};
-				case 10: {hint "Even Jesus couldn't make you happy";};
+				case 30: {hint "You are starting to dehydrate. It's overwhelming your ability to work.";};
+				case 20: {hint "You haven't drank anything in a long time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
+				case 10: {hint "You are now suffering from severe dehydration. Find something to drink quickly!"; player setFatigue 1;};
 			};
 		};
 	};
@@ -58,8 +39,6 @@
 		[] call _fnc_water;
 		sleep 250;
 		[] call _fnc_food;
-		sleep 250;
-		[] call _fnc_happy;
 	};
 };
 
@@ -71,30 +50,30 @@
 		waitUntil {backpack player != ""};
 		_bp = backpack player;
 		_cfg = getNumber(configFile >> "CfgVehicles" >> (backpack player) >> "maximumload");
-		_load = round(_cfg / 10);
-		if (backpack player == "B_Carryall_cbr") then { _load = 120; };
-		if (backpack player == "B_Carryall_khk") then { _load = 120; };
-		if (backpack player == "B_Carryall_oli") then { _load = 120; };
-		if (backpack player == "B_Carryall_ocamo") then { _load = 120; };
-		if (backpack player == "B_Carryall_oucamo") then { _load = 120; };
-		if (backpack player == "B_Carryall_mcamo") then { _load = 120; };
-		if (backpack player == "B_BergenG") then { _load = 90; };
-		if (backpack player == "B_BergenC_red") then { _load = 90; };
-		if (backpack player == "B_BergenC_grn") then { _load = 90; };
-		if (backpack player == "B_BergenC_blu") then { _load = 90; };
-		if (backpack player == "B_Bergen_mcamo") then { _load = 90; };
-		if (backpack player == "B_Bergen_rgr") then { _load = 90; };
-		if (backpack player == "B_Bergen_blk") then { _load = 90; };
-		if (backpack player == "B_Kitbag_mcamo") then { _load = 105; };
-		if (backpack player == "B_Kitbag_sgg") then { _load = 105; };
-		if (backpack player == "B_Kitbag_cbr") then { _load = 105; };
-		if (backpack player == "B_AssaultPack_dgtl") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_rgr") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_sgg") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_blk") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_cbr") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_mcamo") then { _load = 80; };
-		if (backpack player == "B_AssaultPack_ocamo") then { _load = 80; };
+		_load = round(_cfg / 8);
+		if (backpack player == "B_Carryall_cbr") then { _load = 160; };
+		if (backpack player == "B_Carryall_khk") then { _load = 160; };
+		if (backpack player == "B_Carryall_oli") then { _load = 160; };
+		if (backpack player == "B_Carryall_ocamo") then { _load = 160; };
+		if (backpack player == "B_Carryall_oucamo") then { _load = 160; };
+		if (backpack player == "B_Carryall_mcamo") then { _load = 160; };
+		if (backpack player == "B_BergenG") then { _load = 130; };
+		if (backpack player == "B_BergenC_red") then { _load = 130; };
+		if (backpack player == "B_BergenC_grn") then { _load = 130; };
+		if (backpack player == "B_BergenC_blu") then { _load = 130; };
+		if (backpack player == "B_Bergen_mcamo") then { _load = 130; };
+		if (backpack player == "B_Bergen_rgr") then { _load = 130; };
+		if (backpack player == "B_Bergen_blk") then { _load = 130; };
+		if (backpack player == "B_Kitbag_mcamo") then { _load = 145; };
+		if (backpack player == "B_Kitbag_sgg") then { _load = 145; };
+		if (backpack player == "B_Kitbag_cbr") then { _load = 145; };
+		if (backpack player == "B_AssaultPack_dgtl") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_rgr") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_sgg") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_blk") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_cbr") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_mcamo") then { _load = 120; };
+		if (backpack player == "B_AssaultPack_ocamo") then { _load = 120; };
 		life_maxWeight = life_maxWeightT + _load;
 		waitUntil {backpack player != _bp};
 		if(backpack player == "") then 
@@ -142,7 +121,6 @@
 					_walkDis = 0;
 					life_thirst = life_thirst - 5;
 					life_hunger = life_hunger - 5;
-					life_happy = life_happy - 5;
 					[] call life_fnc_hudUpdate;
 				};
 			};

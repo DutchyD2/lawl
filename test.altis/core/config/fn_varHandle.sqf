@@ -68,6 +68,8 @@ switch (_mode) do
 			case "kidney": {"life_inv_kidney"};
 			case "cracku": {"life_inv_cracku"};
 			case "crackp": {"life_inv_crackp"};
+			case "bees": {"life_inv_bees"};
+			case "honey": {"life_inv_honey"};
 		};
 	};
 	
@@ -127,6 +129,8 @@ switch (_mode) do
 			case "life_inv_kidney": {"kidney"};
 			case "life_inv_cracku": {"cracku"};
 			case "life_inv_crackp": {"crackp"};
+			case "life_inv_bees": {"bees"};
+			case "life_inv_honey": {"honey"};
 		};
 	};
 };

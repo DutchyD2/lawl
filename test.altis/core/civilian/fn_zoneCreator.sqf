@@ -11,13 +11,14 @@
 	Triggers are NOT my preferred method so this is considered temporary until a more suitable
 	option is presented.
 */
-private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones"];
+private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_crackZones","_BeesZones"];
 _appleZones = ["apple_1","apple_2","apple_3","apple_4"];
 _peachZones = ["peaches_1","peaches_2","peaches_3","peaches_4"];
 _heroinZones = ["heroin_1"];
 _cocaineZones = ["cocaine_1"];
 _weedZones = ["weed_1"];
 _crackZones = ["crack_1"];
+_BeesZones = ["Bees_1"];
 
 //Create apple zones
 {
@@ -66,3 +67,11 @@ _crackZones = ["crack_1"];
 	_zone setTriggerActivation["CIV","PRESENT",true];
 	_zone setTriggerStatements["player in thislist","LIFE_Action_Crack = player addAction[(localize ""STR_Gather_Crack""),life_fnc_gatherCrack,'',0,false,false,'','!life_action_inUse'];","player removeAction LIFE_Action_Crack;"];
 } foreach _crackZones;
+
+//Create bees zones
+{
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
+	_zone setTriggerArea[50,50,0,false];
+	_zone setTriggerActivation["CIV","PRESENT",true];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Bees = player addAction[(localize ""STR_Gather_Bees""),life_fnc_gatherBees,'',0,false,false,'','!life_action_inUse'];","player removeAction LIFE_Action_Bees;"];
+} foreach _BeesZones;

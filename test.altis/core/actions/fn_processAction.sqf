@@ -10,6 +10,8 @@ _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
 if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
+if(life_water <= 30) exitWith {hint "You are too thirsty to work!"};
+if(life_food <= 30) exitWith {hint "You are too hungry to work!"};
 
 //unprocessed item,processed item, cost if no license,Text to display (I.e Processing  (percent) ..."
 _itemInfo = switch (_type) do
@@ -24,7 +26,8 @@ _itemInfo = switch (_type) do
 	case "cocaine": {["cocaine","cocainep",1500,(localize "STR_Process_Cocaine")];};
 	case "marijuana": {["cannabis","marijuana",500,(localize "STR_Process_Marijuana")];};
 	case "cement": {["rock","cement",350,(localize "STR_Process_Cement")];};
-	case "crack": {["cracku","crackp",5000,"STR_Process_Crack"]};
+	case "crack": {["cracku","crackp",30000,(localize "STR_Process_Crack")];};
+	case "bees": {["bees","honey",2000,(localize "STR_Process_Bees")];};
 	default {[];};
 };
 
@@ -96,7 +99,7 @@ if(_hasLicense) then
 	};
 
 	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(life_cash < _cost) exitWith {hint format[localize "STR_NOTF_ProcessWOLicense",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];

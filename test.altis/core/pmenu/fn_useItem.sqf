@@ -9,7 +9,6 @@ private["_item"];
 disableSerialization;
 if((lbCurSel 2005) == -1) exitWith {hint "You need to select an item first!";};
 _item = lbData[2005,(lbCurSel 2005)];
-[_item] call life_fnc_eathappy;
 
 switch (true) do
 {

@@ -36,7 +36,7 @@ else
     }
     else
     {
-        if ((str(player) in ["cop_31","cop_32","cop_33"])) then
+        if ((str(player) in ["cop_31","cop_32","cop_33","cop_34"])) then
         {
 			if((__GETC__(life_coplevel) == 6) && (__GETC__(life_adminlevel) == 3)) then 
             {
