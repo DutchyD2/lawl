@@ -99,11 +99,6 @@ switch (true) do
 		};
 	};
 	
-	case (_item in ["marijuana","cocainep"]):
-	{
-	    [_item] call life_fnc_eatHappy;
-	};
-	
 	default
 	{
 		hint "This item isn't usable.";

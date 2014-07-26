@@ -50,7 +50,7 @@ life_clothing_purchase = [-1,-1,-1,-1,-1];
 ****** Weight Variables *****
 *****************************
 */
-life_maxWeight = 10; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
+life_maxWeight = 50; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
 life_maxWeightT = 10; //Static variable representing the players max carrying weight on start.
 life_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
 
@@ -75,9 +75,7 @@ life_eat_donuts = 30;
 ****** Happy Variables *******         // Add this area (I guess there can be an error with the life_eat if someone could help would be cool<-----
 *****************************
 */
-life_eat_marijuana = 15;
-life_eat_cocainep = 15;
-life_eat_crackp = 15;
+life_eat_marijuana = 50;
 
 /*
 *****************************
@@ -95,7 +93,7 @@ life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
 life_happy = 70;
-__CONST__(life_paycheck_period,5); //Five minutes
+__CONST__(life_paycheck_period,4); //Five minutes
 life_cash = 0;
 __CONST__(life_impound_car,10000);
 __CONST__(life_impound_boat,10000);

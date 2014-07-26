@@ -16,8 +16,6 @@ _val = 0;
 	switch (_happy) do
 	{
 		case "marijuana": {_val = 15};
-		case "cocainep": {_val = 25};
-		case "crackp": {_val = 30};
 	};
 
 	_sum = life_happy + _val;
